@@ -1,0 +1,31 @@
+#shop-container {
+  padding: 150px 20px 0;
+
+  display: flex;
+  flex-flow: column;
+
+  #user-container {
+    #user-type-answers {
+      padding: 20px;
+    }
+  }
+
+  #products {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 100px 0;
+
+    .product-container {
+      border: 1px solid #000;
+      width: 200px;
+      height: 200px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}
