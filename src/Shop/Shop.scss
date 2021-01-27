@@ -28,4 +28,12 @@
     }
   }
 
+  #basket {
+    text-align: left;
+
+    :nth-child(1) {
+      padding-bottom: 20px;
+    }
+  }
+
 }
