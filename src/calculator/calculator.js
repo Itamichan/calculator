@@ -3,12 +3,18 @@ import {calculateBasePrice, calculateSpecialDiscount, calculateUserDiscount} fro
 
 export const calculatePrice = (userType, product) => {
 
-    const basePrice = calculateBasePrice(product)
+    try {
 
-    const userDiscount = calculateUserDiscount(userType)
+        const basePrice = calculateBasePrice(product)
 
-    const specialDiscount = calculateSpecialDiscount(product)
+        const userDiscount = calculateUserDiscount(userType)
 
-    return basePrice - userDiscount - specialDiscount
+        const specialDiscount = calculateSpecialDiscount(product)
 
+        return basePrice - userDiscount - specialDiscount
+
+    } catch (e) {
+        console.log("error:", e);
+        return "something went wrong"
+    }
 }

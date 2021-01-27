@@ -26,3 +26,5 @@ export const UserTypes = {
     Company: "companyUser",
     Normal: "normalUser"
 }
+
+Object.freeze(UserTypes)

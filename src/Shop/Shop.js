@@ -7,6 +7,7 @@ const Shop = (props) => {
 
     const [userType, setUserType] = useState(UserTypes.Normal)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [currentProductPrice, setCurrentProductPrice] = useState(undefined)
 
 
     const products = INVENTORY.map(product => {
@@ -14,10 +15,10 @@ const Shop = (props) => {
             <div
                 key={product.name}
                 className="product-container"
-                onClick={() => setTotalPrice(prev => {
-                    console.log("productPrice:", calculatePrice(userType, product));
-                    return prev + calculatePrice(userType, product)
-                })}
+                onClick={() => {
+                    setCurrentProductPrice(calculatePrice(userType, product))
+                    setTotalPrice(prev => prev + calculatePrice(userType, product))
+                }}
             >
                 {product.name}
             </div>)
@@ -43,6 +44,9 @@ const Shop = (props) => {
                 {products}
             </div>
             <div id="basket">
+                <div>
+                    Current Product's Price: {currentProductPrice}
+                </div>
                 Calculated price: {totalPrice}
             </div>
         </div>
